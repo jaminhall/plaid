@@ -9,14 +9,15 @@ class PlaidView {
   
     setValue(value) {
       this.element.value = value;
+      this.element.dispatchEvent(new Event('input'));
     }
   
-    addEventListener(eventName, handler) {
-      this.element.addEventListener(eventName, handler);
+    addEventListener(type, listener) {
+      this.element.addEventListener(type, listener);
     }
   
-    removeEventListener(eventName, handler) {
-      this.element.removeEventListener(eventName, handler);
+    removeEventListener(type, listener) {
+      this.element.removeEventListener(type, listener);
     }
   }
   
