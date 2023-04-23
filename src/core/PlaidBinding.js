@@ -12,12 +12,11 @@ export default class PlaidBinding {
   }
 
   updateView(event) {
-    const newValue = event.detail.value;
-    if (newValue !== this.target.getValue()) {
+    const newValue = event?.detail?.value;
+    if (newValue !== undefined && newValue !== this.target.getValue()) {
       this.target.setValue(newValue);
     }
   }
-  
 
   bind() {
     this.handleViewChange = this.handleViewChange.bind(this);
